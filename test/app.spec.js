@@ -22,7 +22,7 @@ describe('express', function() {
 
   it('should load successfully', () => axios.get(url).then(r => expect(r.status === 200)));
 
-  it('should include an input element for the user to enter amount due', () =>
+  xit('should include an input element for the user to enter amount due', () =>
     nightmare
     .goto(url)
     .evaluate(() => document.querySelector('input[name=amountDue]'))
@@ -33,7 +33,7 @@ describe('express', function() {
     })
   );
 
-  it('should include an input element for the user to enter amount received', () =>
+  xit('should include an input element for the user to enter amount received', () =>
     nightmare
     .goto(url)
     .evaluate(() => document.querySelector('input[name=amountReceived]'))
@@ -44,7 +44,7 @@ describe('express', function() {
     })
   );
 
-  it('should include a button for the user to calculate change', () =>
+  xit('should include a button for the user to calculate change', () =>
     nightmare
     .goto(url)
     .evaluate(() => document.querySelector('button.btn'))
@@ -55,7 +55,7 @@ describe('express', function() {
     })
   );
 
-  it('should calculate total change correctly', () =>
+  xit('should calculate total change correctly', () =>
     nightmare
     .goto(url)
     .type('input[name=amountDue]', 13.01)
@@ -67,7 +67,7 @@ describe('express', function() {
     .then(el => expect(el).to.contain('6.99'))
   );
 
-  it('should calculate individual change correctly', () =>
+  xit('should calculate individual change correctly', () =>
     nightmare
     .goto(url)
     .type('input[name=amountDue]', 13.01)
